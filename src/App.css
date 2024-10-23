@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.square {
+  width: 80px; /* Set width and height to be the same */
+  height: 80px;
+  background-color: violet;
+  border: 1px solid #000;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.square:hover {
+  transform: scale(1.1);
+  /* background-color: green ; */
+}
+
+
+.board-row{
+  display: flex;
+}
