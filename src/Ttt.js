@@ -2,6 +2,8 @@
     import { useState } from 'react';
     import './App.css';
     import { useNavigate } from 'react-router-dom';
+    import {Link} from 'react-router-dom';
+
 
     function Ttt(){
         return <Square val = "1"/>
@@ -23,12 +25,16 @@
 
 
     function Board(){
+        const navigate = useNavigate();
         const [squares, setSquares] = useState(Array(9).fill(""));
 
         const winner = calculateWinner(squares);
         let status;
         if (winner) {
             status = "Winner: " + winner;
+            navigate('/Boo', {state:{w:winner}});
+          
+
         } else {
             status = "Next player: " + (c==1 ? "X" : "O");
         }
@@ -62,7 +68,7 @@
             ];
             for (let i = 0; i < lines.length; i++) {
               const [a, b, c] = lines[i];
-              if (squares[a] && squares[a] === squar80px80pxes[b] && squares[a] === squares[c]) {
+              if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
                 return squares[a];
               }
             }
